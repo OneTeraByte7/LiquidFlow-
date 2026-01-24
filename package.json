@@ -1,0 +1,41 @@
+{
+  "name": "liquidflow",
+  "version": "1.0.0",
+  "description": "LiquidFlow - A professional trading platform for Hyperliquid exchange with real-time market data, AI assistant, and portfolio management",
+  "scripts": {
+    "install-all": "npm run install-frontend && npm run install-backend && npm run install-python",
+    "install-frontend": "cd client && npm install",
+    "install-backend": "cd server && npm install",
+    "install-python": "cd python && pip install -r requirements.txt",
+    "dev": "npm-run-all --parallel dev-client dev-server dev-python",
+    "dev-client": "cd client && npm start",
+    "dev-server": "cd server && node server.js",
+    "dev-python": "concurrently \"cd Python && uvicorn bot:app --reload --port 8001\" \"cd Python && uvicorn signing_api:app --reload --port 8002\"",
+    "build": "cd client && npm run build",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-python\"",
+    "start-backend": "cd server && npm start",
+    "start-python": "cd python-service && python -m uvicorn main:app --host 0.0.0.0 --port 8001",
+    "clean": "rm -rf client/node_modules server/node_modules client/build",
+    "test": "npm run test-frontend && npm run test-backend",
+    "test-frontend": "cd client && npm test",
+    "test-backend": "cd server && npm test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "npm-run-all": "^4.1.5"
+  },
+  "keywords": [
+    "liquidflow",
+    "trading",
+    "hyperliquid",
+    "cryptocurrency",
+    "react",
+    "nodejs",
+    "python",
+    "crypto-trading",
+    "perpetual-trading",
+    "fintech"
+  ],
+  "author": "LiquidFlow Team",
+  "license": "MIT"
+}
