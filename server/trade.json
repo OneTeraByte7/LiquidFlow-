@@ -1,0 +1,82 @@
+[
+  {
+    "pair": "BTC-USD",
+    "side": "sell",
+    "amount": 12,
+    "price": 111430,
+    "total": 1337160,
+    "fee": 1337.16,
+    "leverage": 1,
+    "orderType": "market",
+    "status": "completed",
+    "pnl": 0,
+    "timestamp": "2025-08-25T09:13:27.743Z"
+  },
+  {
+    "pair": "ATOM-USD",
+    "side": "buy",
+    "amount": 23,
+    "price": 4.5467,
+    "total": 104.57410000000002,
+    "fee": 0.10457410000000002,
+    "leverage": 1,
+    "orderType": "market",
+    "status": "completed",
+    "pnl": 0,
+    "timestamp": "2025-08-25T09:09:50.907Z"
+  },
+  {
+    "pair": "BTC-USD",
+    "side": "buy",
+    "amount": 123,
+    "price": 112739,
+    "total": 13866897,
+    "fee": 13866.897,
+    "leverage": 1,
+    "orderType": "market",
+    "status": "completed",
+    "pnl": 0,
+    "timestamp": "2025-08-21T15:59:31.901Z"
+  },
+  {
+    "pair": "BTC-USD",
+    "side": "buy",
+    "amount": 20,
+    "price": 113133,
+    "total": 2262660,
+    "fee": 2262.66,
+    "leverage": 1,
+    "orderType": "market",
+    "status": "completed",
+    "pnl": 0,
+    "timestamp": "2025-08-21T15:24:24.822Z"
+  },
+  [
+    {
+      "pair": "BTC-USD",
+      "side": "buy",
+      "amount": 100,
+      "price": 112911,
+      "total": 11291100,
+      "fee": 11291.1,
+      "leverage": 1,
+      "orderType": "market",
+      "status": "completed",
+      "pnl": 0,
+      "timestamp": "2025-08-21T15:21:39.622Z"
+    },
+    {
+      "pair": "BTC-USD",
+      "side": "buy",
+      "amount": 12,
+      "price": 112831,
+      "total": 1353972,
+      "fee": 1353.972,
+      "leverage": 1,
+      "orderType": "market",
+      "status": "completed",
+      "pnl": 0,
+      "timestamp": "2025-08-21T15:17:36.278Z"
+    }
+  ]
+]
