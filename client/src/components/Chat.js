@@ -37,7 +37,8 @@ const Chat = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8001/chat', {
+      const pythonUrl = process.env.REACT_APP_PYTHON_SERVICE_URL || 'https://liquidflow-python.onrender.com';
+      const response = await fetch(`${pythonUrl}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: inputMessage }),
