@@ -1,4 +1,4 @@
-git+https://github.com/erikrose/parsimonious@v0.8.1#egg=parsimonious
+git+https://github.com/erikrose/parsimonious@0.8.1#egg=parsimonious
 fastapi==0.115.0
 uvicorn[standard]==0.32.0
 hyperliquid-python-sdk==0.6.0
