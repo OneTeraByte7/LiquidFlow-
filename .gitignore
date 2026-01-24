@@ -1,0 +1,16 @@
+client/node_modules
+server/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+python/venv
+python/.env
+
+node_modules/
+client/.env
+server/.env
