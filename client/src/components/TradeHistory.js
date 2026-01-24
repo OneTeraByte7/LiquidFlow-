@@ -16,7 +16,7 @@ const TradeHistory = () => {
   useEffect(() => {
     const fetchTrades = async () => {
       try {
-        const res = await fetch('http://localhost:5001/api/trades');
+        const res = await fetch('https://liquidflow.onrender.com/api/trades');
         const data = await res.json();
         const tradesArray = Array.isArray(data.trades) ? data.trades : [];
 

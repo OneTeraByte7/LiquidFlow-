@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { TrendingUp, TrendingDown, ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';
 
-const BACKEND_URL = 'http://localhost:5001'; 
+const BACKEND_URL = 'https://liquidflow.onrender.com'; 
 
 const Trading = () => {
   const { darkMode } = useTheme();
