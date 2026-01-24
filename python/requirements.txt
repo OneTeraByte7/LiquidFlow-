@@ -6,4 +6,6 @@ requests==2.31.0
 python-dotenv==1.0.0
 pydantic==2.10.0
 asyncio-mqtt==0.16.1
+parsimonious==0.10.0
+eth-abi>=6.0.0
 cryptography==41.0.7
