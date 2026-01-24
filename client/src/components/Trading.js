@@ -14,7 +14,7 @@ const Trading = () => {
   const [side, setSide] = useState('buy');
   const [amount, setAmount] = useState('');
   const [price, setPrice] = useState('');
-  const [leverage, setLeverage] = useState(1);
+  const [leverage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [tradeHistory, setTradeHistory] = useState([]);
   
@@ -23,7 +23,7 @@ const Trading = () => {
   const [sizePercentage, setSizePercentage] = useState(0);
   const [reduceOnly, setReduceOnly] = useState(false);
   const [takeProfitStopLoss, setTakeProfitStopLoss] = useState(false);
-  const [currentPosition, setCurrentPosition] = useState({ size: 0, coin: 'BTC' });
+  const [currentPosition] = useState({ size: 0, coin: 'BTC' });
   const [timeInForce, setTimeInForce] = useState('Gtc');
 
   // --- Fetch market data ---

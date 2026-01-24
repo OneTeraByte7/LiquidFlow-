@@ -1,5 +1,5 @@
 // src/components/Spot.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { TrendingUp, TrendingDown, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
@@ -21,11 +21,11 @@ const HyperliquidSpotData = () => {
   // New state for spot trading features
   const [sizeToken, setSizeToken] = useState('HYPE'); // The token being sized
   const [sizePercentage, setSizePercentage] = useState(0);
-  const [availableBalance, setAvailableBalance] = useState({ amount: 0.00, token: 'USDC' });
+  const [availableBalance] = useState({ amount: 0.00, token: 'USDC' });
   const [timeInForce, setTimeInForce] = useState('Gtc'); // Default TIF state
 
   // Fetch spot meta + assetCtxs
-  const fetchSpotMarkets = async () => {
+  const fetchSpotMarkets = useCallback(async () => {
     try {
       const res = await fetch("https://api.hyperliquid.xyz/info", {
         method: "POST",
@@ -70,13 +70,13 @@ const HyperliquidSpotData = () => {
       console.error("Error fetching spot markets:", err);
       toast.error("Failed to fetch spot data");
     }
-  };
+  }, [selectedPair]);
 
   useEffect(() => {
     fetchSpotMarkets();
     const interval = setInterval(fetchSpotMarkets, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchSpotMarkets]);
 
   useEffect(() => {
     // Update size token when pair changes
@@ -138,10 +138,6 @@ const HyperliquidSpotData = () => {
     setIsLoading(true);
 
     try {
-      const tradePrice =
-        orderType === "limit" && price
-          ? parseFloat(price)
-          : midPrice;
 
       // Send all spot trading data to backend
       const tradeData = {

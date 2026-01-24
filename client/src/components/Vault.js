@@ -1,5 +1,5 @@
 // src/components/Vaults.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import {
@@ -55,7 +55,7 @@ const Vaults = () => {
     }
   };
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const [userVaults, userEquities, subs] = await Promise.all([
@@ -80,11 +80,11 @@ const Vaults = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const VaultRow = ({ v }) => {
     const chartData = {

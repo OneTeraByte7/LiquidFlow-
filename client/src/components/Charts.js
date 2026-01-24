@@ -11,7 +11,7 @@ import {
   CartesianGrid,
   Tooltip
 } from "recharts";
-import { TrendingUp, TrendingDown, BarChart3, RefreshCw } from "lucide-react";
+import { TrendingUp, BarChart3, RefreshCw } from "lucide-react";
 import CandleChart from "./CandleChart"; // lightweight-charts candlestick
 
 const Charts = () => {
