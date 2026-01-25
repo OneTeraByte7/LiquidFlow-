@@ -67,7 +67,11 @@
 .landing-section { /* default: let sections size naturally */ scroll-snap-align: start; display: flex; align-items: center; justify-content: center; padding: 4rem 0; }
 
 /* Hero specific sizing so subsequent sections don't create a giant empty block */
-.landing-section.hero { min-height: 72vh; }
+.landing-section.hero { min-height: 100vh; padding: 0; }
+/* Ensure hero container centers its children vertically */
+.landing-section.hero .container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6vh 1rem; position: relative; top: 50%; transform: translateY(-50%); }
+.landing-section.hero { min-height: 100vh; padding: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+.landing { min-height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; }
 .landing-section.features { min-height: auto; padding-top: 6rem; padding-bottom: 6rem; }
 
 /* Fade / slide animations */
@@ -98,7 +102,7 @@
 .icon-wrap { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); }
 
 /* Swoosh */
-.swoosh { width: 100%; height: 80px; margin-top: 32px; opacity: 0.9; transform: translateY(calc(var(--scroll,0) * -10px)); transition: transform 200ms linear; }
+.swoosh { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 120px; opacity: 0.9; transform: translateY(calc(var(--scroll,0) * -10px)); transition: transform 200ms linear; pointer-events: none; }
 
 /* Orb parallax using --scroll (0..1) */
 .orb.o1 { transform: translateY(calc(var(--scroll,0) * -30px)) translateX(calc(var(--scroll,0) * 12px)); }
@@ -139,7 +143,7 @@
 }
 
 /* Prevent long titles wrapping badly */
-.hero-title { word-break: break-word; max-width: 100%; font-size: clamp(2.5rem, 8vw, 5.5rem); }
+.hero-title { word-break: break-word; max-width: 100%; font-size: clamp(2.5rem, 8vw, 5.5rem); margin: 0; }
 
 
 
