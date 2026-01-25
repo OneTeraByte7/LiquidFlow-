@@ -38,7 +38,7 @@ const Landing = () => {
               essential flows for discovering markets, placing orders, and managing positions.
             </p>
             <p>
-              <strong>Owner:</strong> Soham J Suryawanshi — Project Owner.
+              <strong>Owner:</strong> <span className="owner-name">Soham J Suryawanshi</span> — <span className="owner-badge">Project Owner</span>
             </p>
           </div>
         </section>
@@ -64,14 +64,18 @@ const Landing = () => {
           <h2>Team</h2>
           <div className="team-grid">
             <div className="team-card owner">
+              <div className="team-icon"><FiUsers /></div>
               <div className="team-name">Soham J Suryawanshi</div>
               <div className="team-role">Project Owner</div>
+              <div className="owner-badge">Owner</div>
             </div>
             <div className="team-card">
+              <div className="team-icon"><FiUsers /></div>
               <div className="team-name">Contributor</div>
               <div className="team-role">Frontend / UX</div>
             </div>
             <div className="team-card">
+              <div className="team-icon"><FiUsers /></div>
               <div className="team-name">Contributor</div>
               <div className="team-role">Backend / Integrations</div>
             </div>
