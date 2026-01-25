@@ -68,18 +68,29 @@ const Landing = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let w = canvas.width = canvas.offsetWidth;
-    let h = canvas.height = canvas.offsetHeight;
+
+    const getSize = () => {
+      const w = Math.max(1, canvas.clientWidth || window.innerWidth);
+      const h = Math.max(1, canvas.clientHeight || window.innerHeight);
+      canvas.width = Math.floor(w * devicePixelRatio);
+      canvas.height = Math.floor(h * devicePixelRatio);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+      return { w, h };
+    };
+
+    let { w, h } = getSize();
     const particles = [];
-    const P = 60;
+    const P = 80;
     for (let i = 0; i < P; i++) {
       particles.push({
         x: Math.random() * w,
         y: Math.random() * h,
         r: 1 + Math.random() * 3,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        alpha: 0.2 + Math.random() * 0.6,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        alpha: 0.12 + Math.random() * 0.5,
       });
     }
 
@@ -89,10 +100,10 @@ const Landing = () => {
       particles.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < -10) p.x = w + 10;
-        if (p.x > w + 10) p.x = -10;
-        if (p.y < -10) p.y = h + 10;
-        if (p.y > h + 10) p.y = -10;
+        if (p.x < -50) p.x = w + 50;
+        if (p.x > w + 50) p.x = -50;
+        if (p.y < -50) p.y = h + 50;
+        if (p.y > h + 50) p.y = -50;
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 12);
         g.addColorStop(0, `rgba(99,102,241,${p.alpha})`);
         g.addColorStop(1, 'rgba(99,102,241,0)');
@@ -105,8 +116,13 @@ const Landing = () => {
     };
 
     const onResize = () => {
-      w = canvas.width = canvas.offsetWidth;
-      h = canvas.height = canvas.offsetHeight;
+      const size = getSize();
+      w = size.w; h = size.h;
+      // reposition particles proportionally
+      particles.forEach(p => {
+        p.x = Math.min(w, Math.max(0, p.x));
+        p.y = Math.min(h, Math.max(0, p.y));
+      });
     };
     window.addEventListener('resize', onResize);
     draw();

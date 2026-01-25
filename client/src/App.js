@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PrivyProvider } from '@privy-io/react-auth';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Layout from './components/Layout';
