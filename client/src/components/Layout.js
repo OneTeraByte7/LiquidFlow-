@@ -40,7 +40,7 @@ const Layout = () => {
       {/* Sidebar */}
       <div className={`${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed inset-y-0 left-0 z-50 w-64 bg-secondary border-r border-gray-200 dark:border-gray-700 transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static`}>
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 dark:border-gray-700">
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white">TradingHub</h1>
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">liquidlfow</h1>
           <button
             onClick={() => setSidebarOpen(false)}
             className="lg:hidden text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
