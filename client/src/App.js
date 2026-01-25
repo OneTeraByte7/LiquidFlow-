@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { PrivyProvider } from '@privy-io/react-auth';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Layout from './components/Layout';
+import Landing from './components/Landing';
 import Chat from './components/Chat';
 import Trading from './components/Trading';
 import TradeHistory from './components/TradeHistory';
@@ -25,7 +26,7 @@ function App() {
     },
     walletConnect: {
       metadata: {
-        name: 'My App',
+        name: 'liquidlfow',
         description: 'Trading Dashboard',
         url: window.location.origin, // fixes metadata.url warning
         icons: [],
@@ -39,8 +40,9 @@ function App() {
         <Router>
           <div className="App">
             <Routes>
+              <Route path="/" element={<Landing />} />
+
               <Route path="/" element={<Layout />}>
-                <Route index element={<Navigate to="/chat" replace />} />
                 <Route path="chat" element={<Chat />} />
                 <Route path="trading" element={<Trading />} />
                 <Route path="spot" element={<HyperliquidSpotData />} />
