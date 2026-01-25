@@ -14,6 +14,7 @@ import Vault from './components/Vault';
 import VaultDetails from './components/VaultDetails';
 
 import './index.css';
+import './App.css';
 
 const APP_ID = process.env.PRIVY_APP_ID || 'cmel030zf01a6jv0cv2qjl6wa';
 
