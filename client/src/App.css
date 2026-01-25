@@ -62,8 +62,7 @@
 @keyframes float2 { 0% { transform: translateY(0) translateX(0);} 50% { transform: translateY(-36px) translateX(-8px);} 100% { transform: translateY(0) translateX(0);} }
 @keyframes float3 { 0% { transform: translateY(0) translateX(0);} 50% { transform: translateY(-18px) translateX(28px);} 100% { transform: translateY(0) translateX(0);} }
 
-/* Scrollable landing and section snap */
-.landing { height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; }
+.landing { min-height: 100vh; overflow: visible; scroll-snap-type: y mandatory; }
 .landing-section { /* default: let sections size naturally */ scroll-snap-align: start; display: flex; align-items: center; justify-content: center; padding: 4rem 0; }
 
 /* Hero specific sizing so subsequent sections don't create a giant empty block */
@@ -71,7 +70,7 @@
 /* Ensure hero container centers its children vertically */
 .landing-section.hero .container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6vh 1rem; position: relative; top: 50%; transform: translateY(-50%); }
 .landing-section.hero { min-height: 100vh; padding: 0; display: flex; align-items: center; justify-content: center; position: relative; }
-.landing { min-height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; }
+.landing { min-height: 100vh; overflow: visible; scroll-snap-type: y mandatory; }
 .landing-section.features { min-height: auto; padding-top: 6rem; padding-bottom: 6rem; }
 
 /* Fade / slide animations */
@@ -178,15 +177,39 @@
 .team-name { font-weight:700; }
 .team-role { font-size:0.9rem; color:#9ef0d9; }
 
+/* Ensure non-heading text is brighter (override stray greys) */
+.clean-landing p,
+.clean-landing a,
+.clean-landing li,
+.clean-landing .feature p,
+.clean-landing .team-role,
+.clean-landing .stat-label {
+  color: #c7f9ef;
+}
+.clean-landing h2,
+.clean-landing h3,
+.clean-landing .hero-title,
+.clean-landing .team-name,
+.clean-landing .stat-value {
+  color: #ffffff;
+}
+
 @media (max-width: 900px) {
   .features { grid-template-columns: 1fr; }
   .hero-inner { padding: 1.25rem; }
 }
 
 /* About / MVP section */
-.about { max-width: 980px; margin: 1.5rem auto 2rem; color: #c7f9ef; text-align: left; }
-.about h2 { color: #fff; font-size: 1.5rem; margin-bottom: 0.5rem; }
-.about p { color: #bff6e6; line-height: 1.6; margin-bottom: 0.6rem; }
+.about { max-width: 980px; margin: 1.5rem auto 2rem; color: #e6fbf5; text-align: left; }
+.about h2 { color: #ffffff; font-size: 1.5rem; margin-bottom: 0.5rem; }
+.about p { color: #a7f3d0; line-height: 1.6; margin-bottom: 0.6rem; }
+
+/* Team color overrides */
+.team { max-width:1100px; margin: 2rem auto; padding-top:2rem; color: #e6fbf5; }
+.team h2 { text-align:center; margin-bottom:1rem; color:#ffffff; }
+.team-card { background: rgba(255,255,255,0.02); padding:1rem 1.2rem; border-radius:10px; min-width:160px; text-align:center; color: #a7f3d0; }
+.team-card .team-name { color: #a7f3d0; font-weight:700; }
+.team-card .team-role { color: #a7f3d0; font-size:0.9rem; }
 
 
 
