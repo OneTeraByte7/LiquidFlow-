@@ -81,4 +81,28 @@
 /* CTA styling */
 .cta { box-shadow: 0 8px 30px rgba(20,184,166,0.12); }
 
+/* Title accent sweep */
+.hero-title { position: relative; display: inline-block; }
+.hero-title .title-accent { position: absolute; left: 0; right: 0; bottom: -8px; height: 8px; border-radius: 999px; background: linear-gradient(90deg,#06b6d4,#7c3aed); opacity: 0.45; transform-origin: left center; transform: scaleX(calc(var(--scroll,0) + 0.25)); transition: transform 400ms ease; }
+
+/* Arrow animation */
+.animate-arrow { transform: translateX(0); transition: transform 300ms ease; }
+.cta:hover .animate-arrow { transform: translateX(6px); }
+
+/* Icon sizing */
+.icon-lg { width: 44px; height: 44px; color: #a7f3d0; }
+.icon-wrap { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); }
+
+/* Swoosh */
+.swoosh { width: 100%; height: 80px; margin-top: 32px; opacity: 0.9; transform: translateY(calc(var(--scroll,0) * -10px)); transition: transform 200ms linear; }
+
+/* Orb parallax using --scroll (0..1) */
+.orb.o1 { transform: translateY(calc(var(--scroll,0) * -30px)) translateX(calc(var(--scroll,0) * 12px)); }
+.orb.o2 { transform: translateY(calc(var(--scroll,0) * -18px)) translateX(calc(var(--scroll,0) * -8px)); }
+.orb.o3 { transform: translateY(calc(var(--scroll,0) * 20px)) translateX(calc(var(--scroll,0) * 20px)); }
+
+/* Hero title subtle glow */
+.neon { text-shadow: 0 6px 30px rgba(124,58,237,0.08), 0 14px 50px rgba(6,182,212,0.06); }
+
+
 
