@@ -1,6 +1,6 @@
 # LiquidFlow 🚀
 
-> A comprehensive full-stack cryptocurrency trading platform for the Hyperliquid exchange
+> A comprehensive full-stack cryptocurrency trading platform for the Hyperliquid exchanges
 
 A professional trading ecosystem built with **React**, **Node.js**, and **Python**. LiquidFlow provides secure perpetual and spot trading with an AI-powered assistant, real-time market data, advanced charting, and intelligent portfolio management.
 
