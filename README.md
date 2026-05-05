@@ -31,7 +31,7 @@ npm run dev
 ## 🎯 Overview
 
 This project is a complete trading ecosystem that combines:
-- **Privy** for secure wallet management and authentication
+- **Privy** for secure wallet management and authentication overall
 - **Hyperliquid SDK** for perpetual and spot trading
 - **WebSocket** for real-time market data and price updates
 - **FastAPI** for Python-based trading bot and signing API
